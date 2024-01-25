@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 
 from .models import Author, Book
-from .forms import AuthorForm
+from .forms import AuthorForm, BookForm
 
 # Create your views here.
 
@@ -30,3 +30,15 @@ def createAuthor(request):
     return redirect("/form/authors")
   return render(request, "createAuthor.html", {"form": form})
 
+
+def createBook(request, author_id):
+  form = BookForm()
+  if request.method == "POST":
+    form = BookForm(request.POST)
+    if form.is_valid():
+      # print(form.cleaned_data['isdn'])
+      author = Author.objects.get(pk=author_id)
+      author.book_set.create(isdn=form.cleaned_data['isdn'], title=form.cleaned_data['title'], year=form.cleaned_data['year'], genre=form.cleaned_data['genre'], edition=form.cleaned_data['edition'])
+      return redirect(f"/form/author/{author_id}")
+  return render(request, "createBook.html", {"form": form})
+  
