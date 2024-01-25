@@ -9,7 +9,7 @@
   {% for book in books %}
     <tr>
       <td>{{book.isdn}}</td>
-      <td>{{book.title}}</td>
+      <td><a href="{% url 'book' book.id %}">{{book.title}}</a></td>
       <td>{{book.edition}}</td>
       <td>{{book.year}}</td>
       <td>{{book.genre}}</td>
