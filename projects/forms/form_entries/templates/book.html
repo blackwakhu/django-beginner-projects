@@ -21,6 +21,6 @@
   </tr>
   <tr>
     <th>author</th>
-    <td>{{data.author}}</td>
+    <td><a href="{% url 'author' data.author.id %}">{{data.author}}</a></td>
   </tr>
 </table>
