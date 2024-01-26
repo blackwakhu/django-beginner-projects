@@ -18,7 +18,10 @@
       <td>{{book.edition}}</td>
       <td>{{book.year}}</td>
       <td>{{book.genre}}</td>
+      <td><button onclick="deletedata()"><a href="{% url 'deleteBook' book.id %}">Delete</a></button></td>
     </tr>
   {% endfor %}
 </table>
+<script src="/static/js/function.js"></script>
+
 {% endblock %}
