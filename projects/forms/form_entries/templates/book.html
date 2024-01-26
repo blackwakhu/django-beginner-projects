@@ -28,6 +28,14 @@
     <th>author</th>
     <td><a href="{% url 'author' data.author.id %}">{{data.author}}</a></td>
   </tr>
+  <tr>
+    <th></th><td></td>
+    <td>
+      <a onclick="deletedata()" href="{% url 'deleteBook' data.id %}">delete</a>
+    </td>
+  </tr>
 </table>
+
+<script src="/static/js/function.js"></script>
 
 {% endblock %}
