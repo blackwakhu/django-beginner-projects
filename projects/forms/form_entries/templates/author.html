@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %}author {% endblock %}
+
+{% block content %}
 <table>
   <tr>
     <th>first name</th>
@@ -22,3 +27,4 @@
 </table>
 
 <a href="{% url 'createBook' data.id %}">add book</a>
+{% endblock %}
