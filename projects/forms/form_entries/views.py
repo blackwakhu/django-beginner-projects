@@ -41,4 +41,13 @@ def createBook(request, author_id):
       author.book_set.create(isdn=form.cleaned_data['isdn'], title=form.cleaned_data['title'], year=form.cleaned_data['year'], genre=form.cleaned_data['genre'], edition=form.cleaned_data['edition'])
       return redirect(f"/form/author/{author_id}")
   return render(request, "createBook.html", {"form": form})
-  
+
+def deleteBook(request, book_id):
+  book = get_object_or_404(Book, pk=book_id)
+  book.delete()
+  return redirect("/form/books")
+
+def deleteAuthor(request, author_id):
+  author = get_object_or_404(Author, pk=author_id)
+  author.delete()
+  return redirect("/form/authors")
