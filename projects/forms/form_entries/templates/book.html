@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %}book: {{data}}{% endblock %}
+
+{% block content %}
 <table>
   <tr>
     <th>isdn</th>
@@ -24,3 +29,5 @@
     <td><a href="{% url 'author' data.author.id %}">{{data.author}}</a></td>
   </tr>
 </table>
+
+{% endblock %}
