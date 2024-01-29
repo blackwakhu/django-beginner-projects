@@ -7,22 +7,92 @@
   <tr>
     <th>isdn</th>
     <td>{{data.isdn}}</td>
+    <td>
+      <div id="edit_isdn_book">
+        <button onclick="open_data('edit_isdn_book', 'input_isdn_book')">Edit</button>
+      </div>
+    </td>
+    <td>
+      <div class="editpart" id="input_isdn_book">
+      <form action="/form/book/update/isdn/{{data.id}}" method="post">
+        {% csrf_token %}
+        <input type="text" name="data" class="edit_input">
+        <input type="submit" value="submit" onclick="close_data('edit_isdn_book', 'input_isdn_book')">
+      </form>
+      </div>
+    </td>
   </tr>
   <tr>
     <th>title</th>
     <td>{{data.title}}</td>
+    <td>
+      <div id="edit_title_book">
+        <button onclick="open_data('edit_title_book', 'input_title_book')">Edit</button>
+      </div>
+    </td>
+    <td>
+      <div class="editpart" id="input_title_book">
+      <form action="/form/book/update/title/{{data.id}}" method="post">
+        {% csrf_token %}
+        <input type="text" name="data" class="edit_input">
+        <input type="submit" value="submit" onclick="close_data('edit_title_book', 'input_title_book')">
+      </form>
+      </div>
+    </td>
   </tr>
   <tr>
     <th>genre</th>
     <td>{{data.genre}}</td>
+    <td>
+      <div id="edit_genre_book">
+        <button onclick="open_data('edit_genre_book', 'input_genre_book')">Edit</button>
+      </div>
+    </td>
+    <td>
+      <div class="editpart" id="input_genre_book">
+      <form action="/form/book/update/genre/{{data.id}}" method="post">
+        {% csrf_token %}
+        <input type="text" name="data" class="edit_input">
+        <input type="submit" value="submit" onclick="close_data('edit_genre_book', 'input_genre_book')">
+      </form>
+      </div>
+    </td>
   </tr>
   <tr>
     <th>year published</th>
     <td>{{data.year}}</td>
+    <td>
+      <div id="edit_year_book">
+        <button onclick="open_data('edit_year_book', 'input_year_book')">Edit</button>
+      </div>
+    </td>
+    <td>
+      <div class="editpart" id="input_year_book">
+      <form action="/form/book/update/year/{{data.id}}" method="post">
+        {% csrf_token %}
+        <input type="number" min="1" max="3000" name="data" class="edit_input">
+        <input type="submit" value="submit" onclick="close_data('edit_year_book', 'input_year_book')">
+      </form>
+      </div>
+    </td>
   </tr>
   <tr>
     <th>edition</th>
     <td>{{data.edition}}</td>
+    <td>
+      <div id="edit_edition_book">
+        <button onclick="open_data('edit_edition_book', 'input_edition_book')">Edit</button>
+      </div>
+    </td>
+    <td>
+      <div class="editpart" id="input_edition_book">
+      <form action="/form/book/update/edition/{{data.id}}" method="post">
+        {% csrf_token %}
+        <input type="number" min="1" name="data" class="edit_input">
+        <input type="submit" value="submit" onclick="close_data('edit_edition_book', 'input_edition_book')">
+      </form>
+      </div>
+    </td>
   </tr>
   <tr>
     <th>author</th>
@@ -36,6 +106,5 @@
   </tr>
 </table>
 
-<script src="/static/js/function.js"></script>
 
 {% endblock %}
