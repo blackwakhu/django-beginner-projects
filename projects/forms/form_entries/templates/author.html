@@ -7,14 +7,56 @@
   <tr>
     <th>first name</th>
     <td>{{data.fname}}</td>
+    <td>
+      <div id="edit_fname_author">
+        <button onclick="open_data('edit_fname_author', 'input_fname_author')">Edit</button>
+      </div>
+    </td>
+    <td>
+      <div class="editpart" id="input_fname_author">
+      <form action="/form/author/update/fname/{{data.id}}" method="post">
+        {% csrf_token %}
+        <input type="text" name="data" class="edit_input">
+        <input type="submit" value="submit" onclick="close_data('edit_fname_author', 'input_fname_author')">
+      </form>
+      </div>
+    </td>
   </tr>
   <tr>
     <th>last name</th>
     <td>{{data.lname}}</td>
+    <td>
+      <div id="edit_lname_author">
+        <button onclick="open_data('edit_lname_author', 'input_lname_author')">Edit</button>
+      </div>
+    </td>
+    <td>
+      <div class="editpart" id="input_lname_author">
+      <form action="/form/author/update/lname/{{data.id}}" method="post">
+        {% csrf_token %}
+        <input type="text" name="data" class="edit_input">
+        <input type="submit" value="submit" onclick="close_data('edit_lname_author', 'input_lname_author')">
+      </form>
+      </div>
+    </td>
   </tr>
   <tr>
     <th>email</th>
     <td>{{data.email}}</td>
+    <td>
+      <div id="edit_email_author">
+        <button onclick="open_data('edit_email_author', 'input_email_author')">Edit</button>
+      </div>
+    </td>
+    <td>
+      <div class="editpart" id="input_email_author">
+      <form action="/form/author/update/email/{{data.id}}" method="post">
+        {% csrf_token %}
+        <input type="email" name="data" class="edit_input">
+        <input type="submit" value="submit" onclick="close_data('edit_email_author', 'input_email_author')">
+      </form>
+      </div>
+    </td>
   </tr>
   <tr>
     <th>books</th>
@@ -27,4 +69,5 @@
 </table>
 
 <a href="{% url 'createBook' data.id %}">add book</a>
+<a href="{% url 'deleteAuthor' data.id %}">delete author</a>
 {% endblock %}
