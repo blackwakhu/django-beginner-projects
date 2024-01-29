@@ -80,9 +80,9 @@ def updateBook(request, param, book_id):
     book.title = request.POST.get('data')
   elif param == "year":
     book.year = request.POST.get('data')
-  elif param == "year":
+  elif param == "genre":
     book.genre = request.POST.get('data')
-  elif param == "year":
+  elif param == "edition":
     book.edition = request.POST.get('data')
   book.save()
   return redirect(f"/form/book/{book_id}")
