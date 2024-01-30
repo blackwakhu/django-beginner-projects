@@ -1,1 +1,49 @@
 @import "widgets.css";
+
+td, th{
+  padding: 5px;
+}
+
+.email-data{
+  text-transform: lowercase;
+}
+
+th{
+  font-style: bold;
+  text-transform: uppercase;
+}
+
+td{
+  text-transform: capitalize;
+}
+
+body{
+  text-align: left;
+  font-family: arial, verdana, helvetica, sans-serif;
+}
+
+td a{
+  color: black;
+  text-decoration: none;
+}
+
+td a:hover{
+  color: blue;
+  text-decoration: underline;
+}
+
+td a:visited{
+  color: orange;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:visited{
+  color: orange;
+}
+
+a:hover{
+  text-decoration: underline;
+}
